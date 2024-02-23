@@ -86,9 +86,10 @@ The project's folder structure is organized to maintain separation between infra
        A visual representation of the infrastructure diagram.
    - #### Infrastructure-setup:
        ```bash
-       $ terraform init
-       $ terraform plan
-       $ terraform apply --auto-approve
+       $ cd cdk-3tier
+       $ cdk ls
+       $ cdk synth
+       $ cdk deploy --all
        ```
 
 
