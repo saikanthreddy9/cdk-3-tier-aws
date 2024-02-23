@@ -1,6 +1,6 @@
 # Infrastructure Documentation
 
-This document provides an overview of the infrastructure setup for the "three-tier-terraform" project using Terraform. It includes details about the architecture, resources created, and step-by-step instructions on how to reproduce this infrastructure.
+This document provides an overview of the infrastructure setup for the "three-tier-cdk" project using AWS CDK. It includes details about the architecture, resources created, and step-by-step instructions on how to reproduce this infrastructure.
 
 
 ## Overview: 3-Tier Architecture and Information Flow
@@ -54,31 +54,38 @@ The project's folder structure is organized to maintain separation between infra
 
 ```
 ├── AWS-Three-Tier-Architecture.drawio.png
-├── install_apache.sh
-├── install_node.sh
-├── main.tf
-├── modules
-│   └── three-tier-deployment
-│       ├── compute
-│       │   ├── main.tf
-│       │   ├── outputs.tf
-│       │   └── variables.tf
-│       ├── database
-│       │   ├── main.tf
-│       │   ├── outputs.tf
-│       │   └── variables.tf
-│       ├── loadbalancing
-│       │   ├── main.tf
-│       │   ├── outputs.tf
-│       │   └── variables.tf
-│       └── networking
-│           ├── main.tf
-│           ├── outputs.tf
-│           └── variables.tf
-├── outputs.tf
+├── cdk-3tier
+│   ├── app.py
+│   ├── cdk.json
+│   ├── cdk.out
+│   ├── requirements.txt
+│   ├── setup.py
+│   └── stacks
+│       ├── alb_backend_stack.py
+│       ├── alb_frontend_stack.py
+│       ├── bastion_stack.py
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── alb_backend_stack.cpython-310.pyc
+│       │   ├── alb_frontend_stack.cpython-310.pyc
+│       │   ├── bastion_stack.cpython-310.pyc
+│       │   ├── __init__.cpython-310.pyc
+│       │   ├── rds_stack.cpython-310.pyc
+│       │   ├── security_stack.cpython-310.pyc
+│       │   └── vpc_stack.cpython-310.pyc
+│       ├── rds_stack.py
+│       ├── resources
+│       │   ├── __init__.py
+│       │   ├── nat_gateway.py
+│       │   ├── route.py
+│       │   ├── subnet.py
+│       │   └── vpc.py
+│       ├── scripts
+│       │   ├── install_httpd.sh
+│       │   └── install_node.sh
+│       ├── security_stack.py
+│       └── vpc_stack.py
 ├── README.md
-├── terraform.tfvars
-└── variables.tf
 ```
 
 1. ### docs
